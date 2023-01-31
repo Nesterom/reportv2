@@ -16,7 +16,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
-public class Report {
+@Deprecated public class XlsxReport {
     static String separator = File.separator;
     static String path = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "PLANTILLA REGISTRO JORNADA.xlsx";
     static String pathOutput = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "PLANTILLA REGISTRO JORNADA Filled.xlsx";

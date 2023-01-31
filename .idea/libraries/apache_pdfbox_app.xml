@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="apache.pdfbox.app" type="repository">
+    <properties maven-id="org.apache.pdfbox:pdfbox-app:2.0.13" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/pdfbox-app-2.0.13.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
