@@ -76,7 +76,7 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
 		var $li = $('#days li').click(function() {
 			//$li.removeClass('selected');
 			if ($(this).hasClass('selected')) {$(this).removeClass('selected')}
-				else {$(this).addClass('selected')};
+				else if (!$(this).hasClass('inactive')){$(this).addClass('selected')};
 		});
 
     });
@@ -98,5 +98,5 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
 var $li = $('#days li').click(function() {
     //$li.removeClass('selected');
     if ($(this).hasClass('selected')) {$(this).removeClass('selected')}
-		else {$(this).addClass('selected')};
+		else if (!$(this).hasClass('inactive')){$(this).addClass('selected')};
 });
