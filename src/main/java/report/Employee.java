@@ -1,4 +1,6 @@
- @Deprecated public class Employee {
+package report;
+
+@Deprecated public class Employee {
     private String name;
     private String surname;
     private String personalNumber;

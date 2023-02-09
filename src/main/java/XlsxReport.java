@@ -1,3 +1,4 @@
+/*
 import org.apache.commons.io.output.ByteArrayOutputStream;
 import org.apache.poi.openxml4j.exceptions.InvalidFormatException;
 import org.apache.poi.ss.usermodel.*;
@@ -70,14 +71,14 @@ import java.util.Locale;
         Row row41 = sheet.getRow(41);
         Row row50 = sheet.getRow(50);
 
-        row4.getCell(6).setCellValue("Trabajador_Employee: " + EmployeesList.getNameSurnameById(id));
-        row5.getCell(6).setCellValue("N.I.F.: " + EmployeesList.getNieById(id));
-        row6.getCell(6).setCellValue("Nº Afiliación: " + EmployeesList.getAfiliacionById(id));
+        row4.getCell(6).setCellValue("Trabajador_Employee: " + report.EmployeesList.getNameSurnameById(id));
+        row5.getCell(6).setCellValue("N.I.F.: " + report.EmployeesList.getNieById(id));
+        row6.getCell(6).setCellValue("Nº Afiliación: " + report.EmployeesList.getAfiliacionById(id));
         YearMonth billingYearMonth = YearMonth.of(year, month);
         row7.getCell(6).setCellValue("Mes y Año: " + billingYearMonth.getMonth().getDisplayName(style, spanishLocal) + " " + year);
         row50.getCell(1).setCellValue("En________Valencia_______________, a __" + billingYearMonth.atEndOfMonth().getDayOfMonth() + "__ de __" + billingYearMonth.getMonth().getDisplayName(style, spanishLocal) + "__ de " + year);
-        List <Integer> weekEnds = BillingPeriod.getWeekEnds(month,year);
-        List <Integer> publickHollidays = BillingPeriod.getPublickHollidays(month,year);
+        List <Integer> weekEnds = report.BillingPeriod.getWeekEnds(month,year);
+       // List <Integer> publickHollidays = report.BillingPeriod.getPublickHollidays(month,year);
 
         for (LocalDate day = billingYearMonth.atDay(1);
              day.isBefore(billingYearMonth.atEndOfMonth())
@@ -136,3 +137,4 @@ import java.util.Locale;
 
 
 }
+*/

@@ -1,3 +1,5 @@
+package report;
+
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Request;
 import org.json.simple.JSONArray;
