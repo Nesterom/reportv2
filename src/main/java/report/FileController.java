@@ -14,7 +14,7 @@ import java.util.ArrayList;
 @RestController
 public class FileController {
     static String separator = File.separator;
-    static String pathPdfFilled = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "PLANTILLA REGISTRO JORNADA FILLED.pdf";
+    static String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA FILLED.pdf";
     public class FileResponse {
         private String fileName;
         private String fileType;

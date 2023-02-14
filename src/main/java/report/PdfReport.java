@@ -6,7 +6,6 @@ import com.itextpdf.text.pdf.PdfContentByte;
 import com.itextpdf.text.pdf.PdfReader;
 import com.itextpdf.text.pdf.PdfStamper;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -17,9 +16,8 @@ import java.util.List;
 import java.util.Locale;
 
 public class PdfReport {
-    static String separator = File.separator;
-    static String pathPdf = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "PLANTILLA REGISTRO JORNADA EMPTY.pdf";
-    static String pathPdfFilled = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "PLANTILLA REGISTRO JORNADA FILLED.pdf";
+    static String pathPdf = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA EMPTY.pdf";
+    static String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA FILLED.pdf";
 
     public static void generateReport (int id, int month, int year, ArrayList<Integer> vocationList) throws IOException, DocumentException {
         Locale spanishLocal = new Locale("es", "ES");

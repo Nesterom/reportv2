@@ -11,8 +11,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class EmployeesList {
-    static String separator = File.separator;
-    static String path = "C:" + separator + "Users" + separator + "roman.nesterenko" + separator + "OneDrive - Specific-Group Holding GmbH" + separator + "Documents" + separator + "Java" + separator + "test.xlsx";
+    static String path = "src/main/FilesRepository/test.xlsx";
     static int sheetNumber = 0;
     public static ArrayList getList(){
         ArrayList<HashMap> allEmployes = new ArrayList<>();
@@ -25,7 +24,7 @@ public class EmployeesList {
                 HashMap<String, String> oneEmpolye = new HashMap<String, String>();
                 oneEmpolye.put("surname", row.getCell(1).getStringCellValue());
                 oneEmpolye.put("name", row.getCell(0).getStringCellValue());
-                oneEmpolye.put("id", String.valueOf(i+1));
+                oneEmpolye.put("id", String.valueOf(i));
 
                 allEmployes.add(oneEmpolye);
             }
