@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.YearMonth;
 import java.time.format.TextStyle;
-import java.util.ArrayList;
+//import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -19,7 +19,7 @@ public class PdfReport {
     static String pathPdf = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA EMPTY.pdf";
     static String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA FILLED.pdf";
 
-    public static void generateReport (int id, int month, int year, ArrayList<Integer> vocationList) throws IOException, DocumentException {
+    public static void generateReport (int id, int month, int year, List<Integer> vocationList) throws IOException, DocumentException {
         Locale spanishLocal = new Locale("es", "ES");
         TextStyle style = TextStyle.FULL;
         Integer totalHours = 0;

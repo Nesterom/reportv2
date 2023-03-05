@@ -9,10 +9,21 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.util.ArrayList;
+
+
+//added by Igor
+
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+import java.util.List;
+import org.springframework.http.MediaType;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
 
 @RestController
 public class FileController {
+    
     static String separator = File.separator;
     static String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA FILLED.pdf";
     public class FileResponse {
@@ -44,9 +55,13 @@ public class FileController {
             this.data = data;
         }
     }
+    
     @GetMapping("/file")
-    public ResponseEntity<FileResponse> getFile(int id, int month, int year, @RequestParam("vocationList") ArrayList<Integer> vocationList) throws IOException, DocumentException {
-        PdfReport.generateReport(id, month, year, vocationList);
+    @CrossOrigin(origins="*")
+    //@RequestMapping(value = "/file", method = RequestMethod.POST)
+    public ResponseEntity<FileResponse> getFile(Integer id, Integer month, Integer year, @RequestParam(required = false) List<Integer> vacationList) throws IOException, DocumentException {
+        System.out.println("id =" + id + " "+ month);
+        PdfReport.generateReport(id, month, year, vacationList);
         File file = new File(pathPdfFilled);
 
         byte[] fileContent = Files.readAllBytes(file.toPath());

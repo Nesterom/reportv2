@@ -5,31 +5,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.ArrayList;
-import java.util.HashMap;
+//added by Igor
+import org.springframework.web.bind.annotation.CrossOrigin;
+import com.google.gson.*;
 
 @RestController
 public class TestController {
 //    private ArrayList<HashMap> listAll = new ArrayList<>(EmployeesList.getList());
-
-    public class TestResponse {
-        private ArrayList<HashMap> allEmployes = new ArrayList<>();
-
-        public ArrayList<HashMap> getAllEmployes() {
-            return allEmployes;
-        }
-
-        public void setAllEmployes(ArrayList<HashMap> param2) {
-            this.allEmployes = param2;
-        }
+   
+    @CrossOrigin(origins="*")
+    @RequestMapping(value = "/EList", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
+    public String testMethod (){
+        String jsArray = new Gson().toJson(EmployeesList.getList());
+        return jsArray;
     }
-    @RequestMapping(value = "hello", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public TestResponse testMethod (){
-        TestResponse result = new TestResponse();
-        result.setAllEmployes(EmployeesList.getList());
-        return result;
-    }
-
-
-
 }
