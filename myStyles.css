@@ -40,18 +40,18 @@ form{
 .form-style-9 ul li .field-full{
 	width: 100%;
 }
-.form-style-9 ul li input.align-left{
+.form-style-9 ul li button.align-left{
 	float:left;
 }
-.form-style-9 ul li input.align-right{
+.form-style-9 ul li button.align-right{
 	float:right;
 }
 .form-style-9 ul li textarea{
 	width: 100%;
 	height: 100px;
 }
-.form-style-9 ul li input[type="button"], 
-.form-style-9 ul li input[type="submit"] {
+.form-style-9 ul li button[type="button"], 
+.form-style-9 ul li button[type="submit"] {
 	-moz-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	-webkit-box-shadow: inset 0px 1px 0px 0px #3985B1;
 	box-shadow: inset 0px 1px 0px 0px #3985B1;
@@ -65,8 +65,8 @@ form{
 	font: 12px Arial, Helvetica, sans-serif;
 	width: 100%;
 }
-.form-style-9 ul li input[type="button"]:hover, 
-.form-style-9 ul li input[type="submit"]:hover {
+.form-style-9 ul li button[type="button"]:hover, 
+.form-style-9 ul li button[type="submit"]:hover {
 	background: linear-gradient(to bottom, #2D77A2 5%, #337DA8 100%);
 	background-color: #28739E;
 }
