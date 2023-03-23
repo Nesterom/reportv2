@@ -9,23 +9,17 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-
-
-//added by Igor
-
+import java.time.YearMonth;
+import java.time.format.TextStyle;
+import java.util.ArrayList;
 import org.springframework.web.bind.annotation.CrossOrigin;
-
 import java.util.List;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import java.util.Locale;
 
 
 @RestController
 public class FileController {
     
-    static String separator = File.separator;
-    static String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA FILLED.pdf";
     public class FileResponse {
         private String fileName;
         private String fileType;
@@ -58,10 +52,16 @@ public class FileController {
     
     @GetMapping("/file")
     @CrossOrigin(origins="*")
-    //@RequestMapping(value = "/file", method = RequestMethod.POST)
     public ResponseEntity<FileResponse> getFile(Integer id, Integer month, Integer year, @RequestParam(required = false) List<Integer> vacationList) throws IOException, DocumentException {
-        System.out.println("id =" + id + " "+ month);
-        PdfReport.generateReport(id, month, year, vacationList);
+        PdfReport.generateReport(id, month, year, (ArrayList<Integer>) vacationList);
+        YearMonth billingYearMonth = YearMonth.of(year, month);
+        Locale spanishLocal = new Locale("es", "ES");
+        TextStyle style = TextStyle.FULL;
+        String pathPdfFilled = "src/main/FilesRepository/PLANTILLA REGISTRO JORNADA "
+                + EmployeesList.getNameSurnameById(id)
+                + " "
+                + billingYearMonth.getMonth().getDisplayName(style, spanishLocal)
+                + ".pdf";
         File file = new File(pathPdfFilled);
 
         byte[] fileContent = Files.readAllBytes(file.toPath());
