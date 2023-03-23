@@ -12,10 +12,10 @@ import com.google.gson.*;
 @RestController
 public class TestController {
 //    private ArrayList<HashMap> listAll = new ArrayList<>(EmployeesList.getList());
-   
-    @CrossOrigin(origins="*")
+
+    @CrossOrigin(origins = "*")
     @RequestMapping(value = "/EList", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String testMethod (){
+    public String testMethod() {
         String jsArray = new Gson().toJson(EmployeesList.getList());
         return jsArray;
     }

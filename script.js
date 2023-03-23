@@ -179,11 +179,11 @@ function getName() {
     url = url.concat("&month=", currMonth + 1);
     url = url.concat("&year=", currYear);
     url = url.concat("&vacationList=", vacationList);
-    
+
     var filename = document.querySelector('#names option:checked').value;
     filename = filename.concat("_", months[currMonth]);
     filename = filename.concat(".pdf");
-    
+
     console.log(filename);
     $.ajax({
         method: 'GET',
